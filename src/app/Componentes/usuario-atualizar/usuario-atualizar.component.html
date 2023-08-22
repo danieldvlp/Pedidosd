@@ -1,0 +1,30 @@
+<form>
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Id"
+      [(ngModel)]="usuario.Id" name="Id">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Nome"
+      [(ngModel)]="usuario.Nome" name="nome">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Telefone"
+      [(ngModel)]="usuario.Telefone" name="Telefone">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Endereco"
+      [(ngModel)]="usuario.Endereco" name="Endereco">
+
+    </mat-form-field>
+
+  </div>
+
+</form>
+
+<button class="botao" (click)="atualizarUsuario()" color="primary">
+  Salvar
+</button>
