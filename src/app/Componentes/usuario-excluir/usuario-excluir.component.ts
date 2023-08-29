@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { Usuario } from 'src/app/Model/modelUsuario';
+
+@Injectable()
 
 @Component({
   selector: 'app-usuario-excluir',

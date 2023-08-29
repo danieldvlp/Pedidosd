@@ -12,11 +12,18 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { UsuarioReadComponent } from './Componentes/usuario-read/usuario-read.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { UsuarioCriarComponent } from './Componentes/usuario-criar/usuario-criar.component';
 import { UsuarioAtualizarComponent } from './Componentes/usuario-atualizar/usuario-atualizar.component';
 import { UsuarioExcluirComponent } from './Componentes/usuario-excluir/usuario-excluir.component';
 import {MatTableModule} from '@angular/material/table';
+import { UsuarioServiceService } from './Services/usuario-service.service';
+import { Injectable, EventEmitter  } from '@angular/core';
+import { MatInputModule } from '@angular/material/input';
+
+@Injectable({
+  providedIn: 'root'
+})
 
 @NgModule({
   declarations: [
@@ -38,9 +45,11 @@ import {MatTableModule} from '@angular/material/table';
     MatListModule,
     FormsModule,
     MatFormFieldModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent, HttpClient]
+  providers: [UsuarioServiceService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

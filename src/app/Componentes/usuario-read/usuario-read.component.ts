@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/Model/modelUsuario';
+
+@Injectable()
 
 @Component({
   selector: 'app-usuario-read',
@@ -7,20 +10,26 @@ import { Usuario } from 'src/app/Model/modelUsuario';
   styleUrls: ['./usuario-read.component.css']
 })
 
-export class UsuarioReadComponent {
+export class UsuarioReadComponent  {
 
   DisplayColuns = ['Id', 'Nome', 'Telefone', 'Endereco', 'Acoes']
   usuario: Usuario[] = new Array()
-  constructor(){
-
+  constructor(
+    private route : Router
+    
+  ){
+   
   }
 
-  ngOnInit(){
+  ngOnInit(): void{
 
   }
 
   novoUsuario(){
     alert("Usuário criado")
+
+    this.route.navigate(['/usuariocriar'])
+
   }
 
 
