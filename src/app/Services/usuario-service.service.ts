@@ -13,28 +13,28 @@ export class UsuarioServiceService{
   enviromentUrl="";
 
   constructor(
-    
+    private http : HttpClient
   ) {
     this.enviromentName=enviroment.enviromentName;
     this.enviromentUrl=enviroment.BASE_URL;
   }
 
 
-//   criar (usuario : Usuario) : Observable<any> {
-//     return this.http.post<Usuario>(this.enviromentUrl + "/usuario", Usuario)
-//     .pipe(
-//       map(obj => obj ),
-//       catchError (e => e)
-//     )
-//   }
+  criar (usuario : Usuario) : Observable<any> {
+    return this.http.post<Usuario>(this.enviromentUrl + "/usuario", usuario)
+    .pipe(
+      map(obj => obj ),
+      catchError (e => e)
+    )
+  }
 
-//   read(): Observable<any[]>{
-//     return this.http.get<Usuario[]>(this.enviromentUrl + "/usuario").pipe(
-//       map(obj => obj)
+   read(): Observable<any[]>{
+     return this.http.get<any[]>(this.enviromentUrl + "/usuario").pipe(
+       map(obj => obj)
 
-//     )
+     )
 
-//   }
+   }
 
 
 

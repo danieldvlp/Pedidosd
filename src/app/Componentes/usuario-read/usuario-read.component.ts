@@ -1,6 +1,7 @@
 import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/Model/modelUsuario';
+import { UsuarioServiceService } from 'src/app/Services/usuario-service.service';
 
 @Injectable()
 
@@ -14,23 +15,18 @@ export class UsuarioReadComponent  {
 
   DisplayColuns = ['Id', 'Nome', 'Telefone', 'Endereco', 'Acoes']
   usuario: Usuario[] = new Array()
+  
   constructor(
-    private route : Router
+    private serviceUsuario : UsuarioServiceService
     
   ){
    
   }
 
-  ngOnInit(): void{
-
+  ngOnInit(){
+    this.serviceUsuario.read().subscribe(x => {
+      this.usuario = x;
+    })
   }
-
-  novoUsuario(){
-    alert("Usuário criado")
-
-    this.route.navigate(['/usuariocriar'])
-
-  }
-
 
 }
