@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { AppRoutingModule } from './app-routing.module';
@@ -49,7 +49,15 @@ import { MatInputModule } from '@angular/material/input';
     MatInputModule,
     HttpClientModule
   ],
-  providers: [UsuarioServiceService],
+  providers: [
+    {
+      provide : LOCALE_ID,
+      useValue : 'pt-BR',
+    },
+    [
+      UsuarioServiceService
+    ],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

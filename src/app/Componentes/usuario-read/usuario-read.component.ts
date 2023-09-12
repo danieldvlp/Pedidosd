@@ -17,7 +17,7 @@ export class UsuarioReadComponent  {
   usuario: Usuario[] = new Array()
   
   constructor(
-    private serviceUsuario : UsuarioServiceService
+    private serviceUsuario : UsuarioServiceService<Usuario>
     
   ){
    

@@ -14,7 +14,7 @@ export class UsuarioCriarComponent{
   usuario: Usuario = new Usuario()
 
   constructor(
-    private serviceUsuario : UsuarioServiceService
+    private serviceUsuario : UsuarioServiceService<Usuario>
   ){ }
 
   

@@ -66,6 +66,7 @@
             "development": {
               "browserTarget": "Pedidos:build:development"
             }
+            
           },
           "defaultConfiguration": "development"
         },

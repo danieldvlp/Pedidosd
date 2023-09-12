@@ -1,27 +1,28 @@
 import { Injectable } from '@angular/core';
 import { map,catchError } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { enviroment } from '../../../src/enviroments/enviroment';
+import { environment } from '../../../src/enviroments/enviroment';
 import { HttpClient } from '@angular/common/http';
 import { Usuario } from '../Model/modelUsuario';
 import { AppModule } from '../app.module';
 
-@Injectable()
-export class UsuarioServiceService{
+@Injectable({
+  providedIn: 'root'
+})
+export class UsuarioServiceService<T>{
 
-  enviromentName="";
-  enviromentUrl="";
+  enviromentName='';
+  enviromentUrl='';
 
   constructor(
     private http : HttpClient
   ) {
-    this.enviromentName=enviroment.enviromentName;
-    this.enviromentUrl=enviroment.BASE_URL;
+    this.enviromentName = environment.environmentName;
+    this.enviromentUrl = environment.BASE_URL;
   }
 
-
   criar (usuario : Usuario) : Observable<any> {
-    return this.http.post<Usuario>(this.enviromentUrl + "/usuario", usuario)
+    return this.http.post<T>(this.enviromentUrl + "/usuario", usuario)
     .pipe(
       map(obj => obj ),
       catchError (e => e)
