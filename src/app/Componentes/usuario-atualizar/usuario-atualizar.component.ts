@@ -17,6 +17,6 @@ export class UsuarioAtualizarComponent {
   }
 
   atualizarUsuario(){
-    alert("Nome do Usuario: " + this.usuario.Nome)
+    alert("Nome do Usuario: " + this.usuario.nome)
   }
 }

@@ -13,17 +13,18 @@ import { UsuarioServiceService } from 'src/app/Services/usuario-service.service'
 
 export class UsuarioReadComponent  {
 
-  DisplayColuns = ['Id', 'Nome', 'Telefone', 'Endereco', 'Acoes']
-  usuario: Usuario[] = new Array()
-  
+  DisplayColuns = ['id', 'nome', 'telefone', 'endereco', 'Acoes']
+  usuario: Usuario[] = []
+
   constructor(
     private serviceUsuario : UsuarioServiceService<Usuario>
-    
+
   ){
-   
+
   }
 
   ngOnInit(){
+    this.usuario = new Array()
     this.serviceUsuario.read().subscribe(x => {
       this.usuario = x;
     })

@@ -22,7 +22,7 @@ export class UsuarioServiceService<T>{
   }
 
   criar (usuario : Usuario) : Observable<any> {
-    return this.http.post<T>(this.enviromentUrl + "/usuario", usuario)
+    return this.http.post<T>(this.enviromentUrl + "/Usuarios", usuario)
     .pipe(
       map(obj => obj ),
       catchError (e => e)
@@ -30,7 +30,7 @@ export class UsuarioServiceService<T>{
   }
 
    read(): Observable<any[]>{
-     return this.http.get<any[]>(this.enviromentUrl + "/usuario").pipe(
+     return this.http.get<T[]>(this.enviromentUrl + "/Usuarios").pipe(
        map(obj => obj)
 
      )

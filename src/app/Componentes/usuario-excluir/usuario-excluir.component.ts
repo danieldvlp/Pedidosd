@@ -19,6 +19,6 @@ export class UsuarioExcluirComponent {
   }
 
   excluirUsuario(){
-    alert("Nome do Usuario: " + this.usuario.Nome)
+    alert("Nome do Usuario: " + this.usuario.nome)
   }
 }
