@@ -18,6 +18,7 @@ export class UsuarioReadComponent  {
 
   constructor(
     private serviceUsuario : UsuarioServiceService<Usuario>
+    ,private router: Router
 
   ){
 
@@ -29,5 +30,12 @@ export class UsuarioReadComponent  {
       this.usuario = x;
     })
   }
+  editarUsuario(id:number){
+    this.router.navigate(['/usuarioatualizar/', id])
+  }
 
+  excluirUsuario(id:number){
+    this.router.navigate(['/usuarioexcluir/', id])
+  }
+  
 }

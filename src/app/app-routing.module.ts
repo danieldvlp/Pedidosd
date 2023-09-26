@@ -6,14 +6,16 @@ import { UsuarioAtualizarComponent } from './Componentes/usuario-atualizar/usuar
 import { UsuarioExcluirComponent } from './Componentes/usuario-excluir/usuario-excluir.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Home/home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
   { path :'home', component : AppComponent},
   { path :'usuario', component : UsuarioReadComponent},
   { path :'usuariocriar', component : UsuarioCriarComponent},
-  { path :'usuarioatualizar', component : UsuarioAtualizarComponent},
-  { path :'usuarioexcluir', component : UsuarioExcluirComponent},
+  { path :'usuarioatualizar/:id', component : UsuarioAtualizarComponent},
+  { path :'usuarioexcluir/:id', component : UsuarioExcluirComponent},
+  { path :'dashboard', component : DashboardComponent},
 ];
 
 @NgModule({

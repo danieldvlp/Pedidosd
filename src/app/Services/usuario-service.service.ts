@@ -37,6 +37,13 @@ export class UsuarioServiceService<T>{
 
    }
 
+   buscarPorId(id:number): Observable<any>{
+    return this.http.get<T> (this.enviromentUrl + "/Usuarios/" + id).pipe(
+      map(obj => obj)
+
+    )
+   }
+
 
 
 
@@ -50,12 +57,12 @@ export class UsuarioServiceService<T>{
 //     }
 
 
-//     excluir (id: number)  : Observable<any> {
-//       const url = `${this.enviromentUrl + "/usuario" }/${id}`
-//       return this.http.delete<any>(url).pipe(
-//       map(obj => obj),
-//       catchError(e => e)
-//       )
-// }
+    excluir (id: number)  : Observable<any> {
+      const url = `${this.enviromentUrl + "/Usuarios" }/${id}`
+      return this.http.delete<any>(url).pipe(
+      map(obj => obj),
+      catchError(e => e)
+      )
+}
 
 }

@@ -20,6 +20,10 @@ import {MatTableModule} from '@angular/material/table';
 import { UsuarioServiceService } from './Services/usuario-service.service';
 import { Injectable, EventEmitter  } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +36,8 @@ import { MatInputModule } from '@angular/material/input';
     UsuarioReadComponent,
     UsuarioCriarComponent,
     UsuarioAtualizarComponent,
-    UsuarioExcluirComponent
+    UsuarioExcluirComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,10 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatTableModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [
     {
