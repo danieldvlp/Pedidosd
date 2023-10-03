@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/Model/modelUsuario';
+import { UsuarioServiceService } from 'src/app/Services/usuario-service.service';
 
 @Component({
   selector: 'app-usuario-atualizar',
@@ -8,15 +10,31 @@ import { Usuario } from 'src/app/Model/modelUsuario';
 })
 export class UsuarioAtualizarComponent {
   usuario: Usuario = new Usuario()
-  constructor(){
+  constructor(
+    private routeractive: ActivatedRoute,
+    private serviceUsuario: UsuarioServiceService<Usuario>,
+    private router : Router
+
+  ){
+
 
   }
 
   ngOnInit(){
-
+    this.buscarUsuario()
   }
 
   atualizarUsuario(){
-    alert("Nome do Usuario: " + this.usuario.nome)
+    this.serviceUsuario.atualizar(this.usuario).subscribe(x => {
+      alert("Usuario atualizado")
+    })
   }
+
+  buscarUsuario(){
+    const id = Number(this.routeractive.snapshot.params['id'])
+    this.serviceUsuario.buscarPorId(id).subscribe(x => {
+      this.usuario = x
+    })
+  }
+
 }

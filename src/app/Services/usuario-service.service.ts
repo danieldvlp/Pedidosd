@@ -48,13 +48,13 @@ export class UsuarioServiceService<T>{
 
 
 
-//   atualizar(T: Usuario): Observable<any> {
-//     return this.http.put<any>(this.enviromentUrl + "/usuario", T )
-//     .pipe(
-//       map(obj => obj),
-//       catchError(e => e)
-//       );
-//     }
+  atualizar(T: Usuario): Observable<any> {
+    return this.http.put<any>(this.enviromentUrl + "/Usuarios", T )
+    .pipe(
+      map(obj => obj),
+      catchError(e => e)
+      );
+    }
 
 
     excluir (id: number)  : Observable<any> {
